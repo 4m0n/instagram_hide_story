@@ -11,7 +11,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import os
-
+import secret
 
 
 
@@ -35,8 +35,8 @@ time.sleep(2)
 email = wait.until(EC.presence_of_element_located((By.NAME, "username")))
 password = wait.until(EC.presence_of_element_located((By.NAME, "password")))
 
-input(email, "")
-input(password, "")
+input(email, secret.name)
+input(password, secret.password)
 
 button = wait.until(EC.presence_of_element_located((By.XPATH, "//button[.//div[text()='Anmelden']]")))
 button.click()
